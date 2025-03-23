@@ -16,21 +16,6 @@ The Personal Finance Tracker is a web application that helps you track your inco
 - Backend: Python, Flask
 - Database: SQLite
 
-## Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Shreya-230/Personal-Finance-Tracker.git
-2. Install the requirements in your system by typing the following in your command prompt:
-
-   ```
-   pip install -r requirements.txt
-   ```
-3. Run app.py.
-4. Open the `index.html` file in your web browser.
-5. Start tracking your personal finances!
-
 ## Usage
 - Add Transactions:
   - Select the type of transaction (income or expense).
