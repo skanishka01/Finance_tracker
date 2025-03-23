@@ -1,0 +1,367 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  form {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  form select,
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="date"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+  }
+  
+  form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+
+  #chart-container {
+    width: 400px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    margin: 0 auto; /*Center the chart container horizontally*/
+  }
+
+  /* Optional styles for the chart canvas */
+  canvas#monthly-summary-chart {
+    width: 100%;
+    height: 100%;
+  }
+
+#transactions {
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display:none;
+  }
+  
+  #transactions h2 {
+    margin-bottom: 10px;
+    color: #333;
+    
+  }
+  
+  .transaction-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .transaction-item span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .transaction-item button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .transaction-item button:hover {
+    background-color: #d32f2f;
+  }
+  
+  #balance {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 0px;
+  }
+  
+  #balance h2 {
+    margin-bottom: 10px;
+  }
+  
+  #balance p {
+    font-size: 24px;
+  }
+
+.edit-transaction input,
+.edit-transaction label {
+  display: block;
+  margin: 10px auto;
+}
+
+.edit-transaction button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-transaction button:hover {
+    background-color: #d32f2f;
+  }  
+
+  .edit-transaction input, select{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .edit-transaction label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+#progress-tracker {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+#progress-tracker h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#goal-amount-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#goal-amount {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  height: 20px;
+  overflow: hidden;
+}
+
+#progress {
+  background-color: #4caf50;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-percentage {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#goal-achieved-message {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+
+#monthly-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #8fbcea;
+    border: 1px solid #ccc;
+    /* display: none; */
+  }
+  
+  #monthly-summary h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #monthly-summary ul {
+    list-style-type: none;
+    padding: 0;
+
+  }
+  
+  #monthly-summary li {
+    margin-bottom: 5px;
+  }
+  
+  #monthly-summary-chart {
+    margin-top: 20px;
+  }
+
+  /* #chart-container{ */
+    /* display: none; */
+  /* } */
+
+  
+/* Bill Reminders Section */
+#bill-reminders {
+  margin-top: 20px;
+}
+
+#bill-reminders h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#bill-reminder-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bill-reminder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.bill-reminder-item span {
+  font-weight: bold;
+}
+
+.bill-reminder-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Bill Reminder Form */
+#bill-reminder-form {
+  margin-top: 20px;
+}
+
+#bill-reminder-form h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#bill-reminder-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#bill-reminder-form input[type="text"],
+#bill-reminder-form input[type="date"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#bill-reminder-form button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+#reminder-message {
+  background-color: #ffcccc;
+  color: #ff0000;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: none;
+  position: relative;
+}
+
+#reminder-message p {
+  margin: 0;
+}
+
+#reminder-message button {
+  background-color: transparent;
+  border: none;
+  color: #ff0000;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#bill-reminders-heading{
+  display:none;
+}

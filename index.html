@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Finance Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+     <link rel="stylesheet" type="text/css" href="styles2.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>PERSONAL FINANCE TRACKER</h1>
+
+    <div id="reminder-message">
+      <p id="reminder-text"></p>
+      <button id="reminder-close-button">&times;</button>
+    </div>    
+
+    <form id="transaction-form">
+      <label for="type">Type:</label>
+      <select id="type">
+        <option disabled selected value="">Select type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" required placeholder="Enter description">
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" required placeholder="Enter amount">
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <div id="transactions">
+      <h2>Transactions</h2>
+      <ul id="transaction-list"></ul>
+    </div>
+
+    <div id="balance">
+      <h2>Current Balance</h2>
+      <p id="balance-amount">0</p>
+    </div>
+
+    <div id="progress-tracker">
+      <h2>Progress Tracker</h2>
+      <form id="goal-form">
+        <label for="goal-amount">Set Goal Amount:</label>
+        <input type="number" id="goal-amount" step="0.01" placeholder="Enter goal amount" required>
+        <button type="submit">Set Goal</button>
+      </form>
+      <div id="goal-container" style="display: none;">
+        <p>Goal Amount: <span id="goal-display"></span></p>
+      </div>
+      <div id="progress-container">
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <span id="progress-percentage" class="progress-percentage"></span>
+      </div>
+    </div>    
+    <div id="goal-achieved-message" style="display: none;">
+      <p>Congratulations! You have achieved your goal.</p>
+    </div>      
+    <!-- <h1>Expenditure</h1> -->
+    <section id="monthly-summary">
+            <h2>Expenditure Summary</h2>
+            <!-- <h1>Hello ji mama ji</h1> -->
+        </section>
+    <div id="chart-container">
+
+    </div>
+    <section id="bill-reminders">
+      <h2 id="bill-reminders-heading">Bill Reminders</h2>
+      <ul id="bill-reminder-list"></ul>
+    </section>
+
+    
+    <section id="bill-reminder-form">
+      <h3>Add Bill Reminder</h3>
+      <form id="bill-reminder-form">
+        <label for="bill-name">Bill Name:</label>
+        <input type="text" id="bill-name" required>
+    
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" required>
+    
+        <button type="submit">Add Reminder</button>
+      </form>
+    </section>
+    
+
+  <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
